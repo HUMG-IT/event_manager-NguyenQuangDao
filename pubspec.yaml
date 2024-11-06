@@ -9,6 +9,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  localstore: ^1.4.0
+  syncfusion_flutter_calendar: ^27.1.51
+  flutter_rating_bar: ^4.0.1
+  tdesign_flutter: ^0.1.7
+  syncfusion_flutter_charts: ^27.1.58
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +25,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
