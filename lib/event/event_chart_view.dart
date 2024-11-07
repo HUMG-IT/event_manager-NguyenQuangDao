@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
+import 'event_detail_view.dart';
 import 'event_model.dart';
 import 'event_service.dart';
 
@@ -56,8 +57,6 @@ class _EventChartViewState extends State<EventChartView> {
     }
   }
 
-// Thêm biến để lưu số lượng đánh giá
-
   /// Hàm tính toán thời gian còn lại giữa startTime và endTime
   String calculateRemainingTime(DateTime endTime) {
     DateTime startTime = DateTime.now();
@@ -107,9 +106,20 @@ class _EventChartViewState extends State<EventChartView> {
     );
   }
 
-  /// Hàm trả về bảng với các biểu tượng
   Widget _operationIconTable(BuildContext context) {
     return TDTable(
+      onCellTap: (rowIndex, row, col) {
+        final EventModel event = items[rowIndex];
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) {
+            return EventDetailView(event: event);
+          },
+        )).then((value) async {
+          if (value == true) {
+            await loadEvents();
+          }
+        });
+      },
       columns: [
         TDTableCol(
           title: 'Tên sự kiện',
