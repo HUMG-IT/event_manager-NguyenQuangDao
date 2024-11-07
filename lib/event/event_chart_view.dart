@@ -101,17 +101,6 @@ class _EventChartViewState extends State<EventChartView> {
               child: _operationIconTable(context),
             ),
           ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(16.0, 32.0, 0, 0),
-                child: Text(
-                  'Ghi chú:',
-                ),
-              ),
-            ],
-          ),
           Container(child: _buildChart()),
         ],
       ),

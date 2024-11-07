@@ -60,11 +60,11 @@ class _EventViewState extends State<EventView> {
             onPressed: () {
               calendarController.displayDate = DateTime.now();
             },
-            icon: Icon(Icons.today_outlined),
+            icon: const Icon(Icons.today_outlined),
           ),
           IconButton(
             onPressed: loadEvents,
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
           ),
           PopupMenuButton<int>(
             icon: const Icon(Icons.more_vert),
@@ -72,7 +72,8 @@ class _EventViewState extends State<EventView> {
               if (value == 1) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => EventChartView()),
+                  MaterialPageRoute(
+                      builder: (context) => const EventChartView()),
                 );
               } else if (value == 2) {
                 // Navigator.push(
