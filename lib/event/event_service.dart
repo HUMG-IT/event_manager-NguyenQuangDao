@@ -1,8 +1,6 @@
 import 'package:event_manager/event/event_model.dart';
 import 'package:localstore/localstore.dart';
 
-import 'event_local_pushnotification.dart';
-
 class EventService {
   final db = Localstore.getInstance(useSupportDir: true);
   final path = 'events';
@@ -27,7 +25,6 @@ class EventService {
     // if no id => create id random
     item.id ??= db.collection(path).doc().id;
     await db.collection(path).doc(item.id).set(item.toMap());
-    await NotificationService.mostrarNotifications(item);
   }
 
   // delete event in localstore
