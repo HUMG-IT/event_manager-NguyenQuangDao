@@ -116,6 +116,7 @@ class _EventChartViewState extends State<EventChartView> {
           },
         )).then((value) async {
           if (value == true) {
+            await getRatingCounts();
             await loadEvents();
           }
         });
