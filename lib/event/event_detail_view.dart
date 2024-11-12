@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../widget/rating_bar.dart';
+import 'event_ notification_helper.dart';
 import 'event_model.dart';
 import 'event_service.dart';
 
@@ -82,6 +83,42 @@ class _EventDetailViewState extends State<EventDetailView> {
     Navigator.of(context).pop(true);
   }
 
+  Future<void> _notificationEvent() async {
+    int currentTime = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+    int notificationTime =
+        widget.event.startTime.millisecondsSinceEpoch ~/ 1000;
+    int delayInSeconds = notificationTime - currentTime;
+
+    if (delayInSeconds > 0) {
+      print("Notification will be triggered in $delayInSeconds seconds.");
+      await NotificationHelper.scheduleNotification(
+        widget.event.subject,
+        widget.event.notes ?? '',
+        delayInSeconds,
+      );
+    } else {
+      // Hiển thị AlertDialog nếu thời gian sự kiện đã qua
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Lưu ý"),
+            content: const Text(
+                "Thời gian sự kiện đã qua. Không thể đặt thông báo."),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Đóng dialog
+                },
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final al = AppLocalizations.of(context)!;
@@ -142,7 +179,7 @@ class _EventDetailViewState extends State<EventDetailView> {
                       });
                     },
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -154,8 +191,20 @@ class _EventDetailViewState extends State<EventDetailView> {
                       FilledButton.icon(
                         onPressed: _saveEvent,
                         label: const Text('Lưu sự kiện'),
-                      ),
+                      )
                     ],
+                  ),
+                  const SizedBox(height: 24),
+                  ListTile(
+                    title: const Text('bật/tắt thông báo:'),
+                    trailing: Switch(
+                        value: widget.event.isNotification,
+                        onChanged: (value) {
+                          setState(() {
+                            widget.event.isNotification = value;
+                          });
+                          _notificationEvent();
+                        }),
                   ),
                 ],
               )
