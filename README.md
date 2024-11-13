@@ -10,6 +10,44 @@
 - **Lớp:** DCCTCT66_05D
 - **Đề tài:** Xây dựng và kiểm thử ứng dụng Quản lý sự kiện
 
+# Demo bài làm: [Nhấn vào đây để xem video demo](./imagevideo_demo/demoAppEvent.mp4)
+
+<img src="./imagevideo_demo/event_home_view.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/event_detail_view.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/notifi_error_event.png" alt="code cấu trúc thư mục" width="400" height="300"><img src="./imagevideo_demo/notifi_inside_event.png" alt="code cấu trúc thư mục" width="400" height="300"><img src="./imagevideo_demo/notifi_onside_event.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/event_chart_view.png" alt="code cấu trúc thư mục" width="170" height="300">
+
+## cấu trúc thư mục
+
+<img src="./imagevideo_demo/cau truc thu muc.png" alt="code cấu trúc thư mục" width="300" height="200">
+
+## event_notification_helper.dart
+
+<img src="./imagevideo_demo/code tạo thông báo.png" alt="code thông báo" width="300" height="200">
+
+## event_model.dart
+
+<img src="./imagevideo_demo/code model 1.png" alt="code model" width="300" height="200"> <img src="./imagevideo_demo/code model 2.png" alt="code model" width="300" height="200">
+
+## event_data_source.dart
+
+<img src="./imagevideo_demo/code data source.png" alt="code data source" width="300" height="200">
+
+## event_service.dart
+
+<img src="./imagevideo_demo/code_event_service.png" alt="code_event_service" width="300" height="200">
+
+## event_view.dart
+
+<img src="./imagevideo_demo/code_event_view_1.png" alt="code_event_view_1" width="300" height="200"> <img src="./imagevideo_demo/code_event_view_2.png" alt="code_event_view_1" width="300" height="200"> <img src="./imagevideo_demo/code_event_view_3.png" alt="code_event_view_1" width="300" height="200">
+
+## event_detail_view.dart
+
+<img src="./imagevideo_demo/code detail view 1.png" alt="code_detail_event_view_1" width="300" height="200"> <img src="./imagevideo_demo/code detail view 2.png" alt="code_detail_event_view_1" width="300" height="200"> <img src="./imagevideo_demo/code detail view 3.png" alt="code_detail_event_view_1" width="300" height="200">
+
+## event_chart_view.dart
+
+<img src="./imagevideo_demo/code biểu đồ 1.png" alt="code biểu đồ" width="300" height="200"><img src="./imagevideo_demo/code biểu đồ 2.png" alt="code biểu đồ" width="300" height="200"><img src="./imagevideo_demo/code biểu đồ 3.png" alt="code biểu đồ" width="300" height="200">
+
+# Hướng dẫn:
+
 Chào mừng bạn đến với dự án Quản lý sự kiện! Tệp README này sẽ hướng dẫn bạn hoàn thành bài tập.
 
 ## Cấu trúc Dự án

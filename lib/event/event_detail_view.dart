@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../widget/rating_bar.dart';
-import 'event_ notification_helper.dart';
 import 'event_model.dart';
+import 'event_notification_helper.dart';
 import 'event_service.dart';
 
 // ignore: must_be_immutable

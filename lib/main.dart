@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'event/event_ notification_helper.dart';
+import 'event/event_notification_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
