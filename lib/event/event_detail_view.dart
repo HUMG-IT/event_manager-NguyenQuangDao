@@ -90,10 +90,9 @@ class _EventDetailViewState extends State<EventDetailView> {
     int delayInSeconds = notificationTime - currentTime;
 
     if (delayInSeconds > 0) {
-      print("Notification will be triggered in $delayInSeconds seconds.");
       await NotificationHelper.scheduleNotification(
-        widget.event.subject,
-        widget.event.notes ?? '',
+        subjectControler.text,
+        notesControler.text,
         delayInSeconds,
       );
     } else {

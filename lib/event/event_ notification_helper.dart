@@ -8,6 +8,11 @@ class NotificationHelper {
   static init() async {
     await _notification.initialize(const InitializationSettings(
       android: AndroidInitializationSettings("@mipmap/ic_launcher"),
+      iOS: DarwinInitializationSettings(
+        requestAlertPermission: true,
+        requestBadgePermission: true,
+        requestSoundPermission: true,
+      ),
     ));
     tz.initializeTimeZones();
   }

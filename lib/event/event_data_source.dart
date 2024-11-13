@@ -59,17 +59,17 @@ class EventDataSouce extends CalendarDataSource {
   Color getRatingColor(double rating) {
     switch (rating) {
       case 1:
-        return const Color.fromARGB(255, 7, 178, 13); // Rất dễ
+        return const Color.fromARGB(255, 7, 178, 13);
       case 2:
-        return const Color.fromARGB(255, 134, 187, 80); // Dễ
+        return const Color.fromARGB(255, 134, 187, 80);
       case 3:
-        return Colors.amber; // Trung bình
+        return Colors.amber;
       case 4:
-        return const Color.fromARGB(255, 244, 105, 105); // Khó
+        return const Color.fromARGB(255, 244, 105, 105);
       case 5:
-        return const Color.fromARGB(255, 239, 22, 6); // Rất khó
+        return const Color.fromARGB(255, 239, 22, 6);
       default:
-        return Colors.grey; // Màu mặc định nếu rating không hợp lệ
+        return Colors.grey;
     }
   }
 }
