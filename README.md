@@ -11,9 +11,16 @@
 - **Đề tài:** Xây dựng và kiểm thử ứng dụng Quản lý sự kiện
 
 # Demo bài làm: [Nhấn vào đây để xem video demo](./imagevideo_demo/demoAppEvent.mp4)
-
+## giới thiệu các chức năng:
+- **Chức năng thông báo sử dụng flutter_local_notifications**
+- **Đánh giá, chọn mức độ quan trọng, bật tắt thông báo, nhập thông tin ( tiêu đề, nội dung, thời gian bắt đầu và kết thúc)**
+- **Xem các sự kiện theo ngày tuần và nhiều kiểu xem khác nhau**
+- **Nút load lại dữ liệu và nút quay trở lại thời gian hiện tại**
+- **Thống kê xem thông tin event dưới dạng bảng ( có thể chọn và chỉnh sửa) và thống kê biểu đồ**
+  
 <img src="./imagevideo_demo/event_home_view.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/event_detail_view.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/notifi_error_event.png" alt="code cấu trúc thư mục" width="400" height="300"><img src="./imagevideo_demo/notifi_inside_event.png" alt="code cấu trúc thư mục" width="400" height="300"><img src="./imagevideo_demo/notifi_onside_event.png" alt="code cấu trúc thư mục" width="170" height="300"><img src="./imagevideo_demo/event_chart_view.png" alt="code cấu trúc thư mục" width="170" height="300">
 
+# code
 ## cấu trúc thư mục
 
 <img src="./imagevideo_demo/cau truc thu muc.png" alt="code cấu trúc thư mục" width="300" height="200">
