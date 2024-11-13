@@ -5,6 +5,7 @@ class EventModel {
   DateTime startTime;
   DateTime endTime;
   bool isAllDay;
+  bool isNotification;
   String subject;
   String? notes;
   String? recurrenceRule;
@@ -15,6 +16,7 @@ class EventModel {
     required this.startTime,
     required this.endTime,
     this.isAllDay = false,
+    this.isNotification = false,
     this.subject = '',
     this.notes,
     this.recurrenceRule,
@@ -26,6 +28,7 @@ class EventModel {
     DateTime? startTime,
     DateTime? endTime,
     bool? isAllDay,
+    bool? isNotification,
     String? subject,
     String? notes,
     String? recurrenceRule,
@@ -36,6 +39,7 @@ class EventModel {
       startTime: startTime ?? this.startTime,
       endTime: endTime ?? this.endTime,
       isAllDay: isAllDay ?? this.isAllDay,
+      isNotification: isNotification ?? this.isNotification,
       subject: subject ?? this.subject,
       notes: notes ?? this.notes,
       recurrenceRule: recurrenceRule ?? this.recurrenceRule,
@@ -49,6 +53,7 @@ class EventModel {
       'startTime': startTime.millisecondsSinceEpoch,
       'endTime': endTime.millisecondsSinceEpoch,
       'isAllDay': isAllDay,
+      'isNotification': isNotification,
       'subject': subject,
       'notes': notes,
       'recurrenceRule': recurrenceRule,
@@ -62,6 +67,7 @@ class EventModel {
       startTime: DateTime.fromMillisecondsSinceEpoch(map['startTime'] as int),
       endTime: DateTime.fromMillisecondsSinceEpoch(map['endTime'] as int),
       isAllDay: map['isAllDay'] as bool,
+      isNotification: map['isNotification'] as bool? ?? false,
       subject: map['subject'] as String,
       notes: map['notes'] != null ? map['notes'] as String : null,
       recurrenceRule: map['recurrenceRule'] != null
@@ -78,7 +84,7 @@ class EventModel {
 
   @override
   String toString() {
-    return 'EventModel(id: $id, startTime: $startTime, endTime: $endTime, isAllDay: $isAllDay, subject: $subject, notes: $notes, recurrenceRule: $recurrenceRule, rating: $rating)';
+    return 'EventModel(id: $id, startTime: $startTime, endTime: $endTime, isAllDay: $isAllDay, isNotification: $isNotification, subject: $subject, notes: $notes, recurrenceRule: $recurrenceRule, rating: $rating)';
   }
 
   @override
@@ -89,6 +95,7 @@ class EventModel {
         other.startTime == startTime &&
         other.endTime == endTime &&
         other.isAllDay == isAllDay &&
+        other.isNotification == isNotification &&
         other.subject == subject &&
         other.notes == notes &&
         other.recurrenceRule == recurrenceRule &&
@@ -101,6 +108,7 @@ class EventModel {
         startTime.hashCode ^
         endTime.hashCode ^
         isAllDay.hashCode ^
+        isNotification.hashCode ^
         subject.hashCode ^
         notes.hashCode ^
         recurrenceRule.hashCode ^
